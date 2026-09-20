@@ -3,6 +3,7 @@ import { ScrollTrigger } from './lib/gsapSetup';
 import FlowerDefs from './components/FlowerDefs.jsx';
 import ProgressBar from './components/ProgressBar/ProgressBar.jsx';
 import Intro from './components/Intro/Intro.jsx';
+import Searching from './components/Searching/Searching.jsx';
 import Growth from './components/Growth/Growth.jsx';
 import Bloom from './components/Bloom/Bloom.jsx';
 import Field from './components/Field/Field.jsx';
@@ -25,6 +26,7 @@ export default function App() {
       <div className="vignette" />
 
       <Intro />
+      <Searching />
       <Growth />
       <Bloom />
       <Field />

@@ -42,7 +42,7 @@ export default function Intro() {
         ))}
       </div>
       <div className="seed-glow" ref={seedRef} />
-      <h1>18 de septiembre</h1>
+      <h1>21 de septiembre</h1>
       <p className={`hint ${prefersReducedMotion ? 'no-motion' : ''}`}>
         Scrolleá para ver qué pasa ↓
       </p>
