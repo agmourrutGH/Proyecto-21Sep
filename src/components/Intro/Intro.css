@@ -1,0 +1,23 @@
+#intro{ background:linear-gradient(180deg,#14142e 0%, #1f1f45 100%); }
+.stars{ position:absolute; inset:0; }
+.star{
+  position:absolute; width:2px; height:2px; background:#fff; border-radius:50%;
+  animation:twinkle 3s ease-in-out infinite;
+}
+.stars.no-motion .star{ animation:none; opacity:.5; }
+@keyframes twinkle{ 0%,100%{opacity:.15} 50%{opacity:.9} }
+.seed-glow{
+  width:30px; height:38px; border-radius:50%/60% 60% 40% 40%;
+  background:linear-gradient(180deg,#9a6b3c,#5C3D21);
+  box-shadow:0 0 40px rgba(255,210,63,.35), 0 0 80px rgba(255,210,63,.15);
+}
+#intro h1{
+  font-size:clamp(1.9rem,7vw,3.4rem); font-weight:700; margin-top:2.2rem;
+  letter-spacing:.5px; text-shadow:0 0 30px rgba(255,210,63,.25);
+}
+#intro .hint{
+  margin-top:1.2rem; opacity:.55; font-size:.95rem;
+  animation:bounce 1.8s infinite;
+}
+#intro .hint.no-motion{ animation:none; }
+@keyframes bounce{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }

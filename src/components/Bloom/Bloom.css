@@ -1,0 +1,8 @@
+#bloom{
+  background:linear-gradient(180deg,#234a3a 0%, #d98c3b 100%);
+  gap:clamp(1.2rem,5vw,3rem);
+  flex-direction:row; flex-wrap:wrap; align-content:center;
+}
+@media (max-width:600px){
+  #bloom{ gap:1.2rem; }
+}

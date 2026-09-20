@@ -1,0 +1,59 @@
+#message{
+  background:linear-gradient(180deg,#FFE8A3 0%, var(--yellow) 100%);
+  color:var(--ink);
+}
+#message .flower-svg{ filter:drop-shadow(0 10px 22px rgba(0,0,0,.22)); }
+#message h2{
+  font-size:clamp(1.6rem,6vw,2.7rem); font-weight:700; min-height:2.6em;
+  padding:0 2vw;
+}
+#message p.sub{
+  margin-top:1rem; font-size:1rem; max-width:32rem; opacity:.8; padding:0 4vw;
+}
+.cursor{ display:inline-block; width:3px; background:var(--ink); margin-left:3px; animation:blink 1s step-end infinite; }
+.cursor.no-motion{ animation:none; }
+@keyframes blink{ 50%{opacity:0} }
+
+.download-btn{
+  margin-top:1.6rem;
+  font-family:'Quicksand', sans-serif;
+  font-weight:600;
+  font-size:.95rem;
+  color:var(--ink);
+  background:#fff;
+  border:2px solid var(--ink);
+  border-radius:999px;
+  padding:.7rem 1.6rem;
+  cursor:pointer;
+  transition:transform .15s ease, opacity .15s ease;
+}
+.download-btn:hover:not(:disabled){ transform:translateY(-2px); }
+.download-btn:disabled{ opacity:.45; cursor:default; }
+
+/* ---- postal offscreen, capturada con html2canvas ---- */
+.postal-card{
+  position:fixed;
+  left:-9999px;
+  top:0;
+  width:390px;
+  height:844px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1.6rem;
+  padding:3rem 2rem;
+  text-align:center;
+  background:linear-gradient(180deg,#FFE8A3 0%, var(--yellow) 55%, var(--orange) 100%);
+  color:var(--ink);
+  font-family:'Quicksand', sans-serif;
+}
+.postal-card h2{
+  font-family:'Fredoka', sans-serif;
+  font-size:2rem;
+  font-weight:700;
+}
+.postal-card .postal-date{
+  font-size:1rem;
+  opacity:.75;
+}

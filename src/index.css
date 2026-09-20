@@ -1,0 +1,52 @@
+:root{
+  --yellow:#FFD23F;
+  --yellow-deep:#FFB627;
+  --orange:#FF9F1C;
+  --cream:#FFF8E7;
+  --ink:#3f2c12;
+}
+*{ margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html{ background:#14142e; }
+body{
+  font-family:'Quicksand', sans-serif;
+  color:var(--cream);
+  overflow-x:hidden;
+  touch-action:pan-y;
+}
+h1,h2{ font-family:'Fredoka', sans-serif; }
+
+section{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  padding:6vh 6vw;
+}
+
+#progressBar{
+  position:fixed; top:0; left:0; height:4px; width:0%;
+  background:linear-gradient(90deg,var(--yellow),var(--orange));
+  z-index:60; transform-origin:left;
+}
+
+.vignette{
+  position:fixed; inset:0; pointer-events:none; z-index:40;
+  box-shadow: inset 0 0 18vw rgba(0,0,0,.35);
+}
+
+.petal-burst{
+  position:fixed; width:10px; height:14px;
+  border-radius:50%/60% 60% 40% 40%;
+  pointer-events:none; z-index:70;
+  transform:translate(-50%,-50%);
+}
+
+@media (max-width:600px){
+  section{ padding:5vh 6vw; }
+}

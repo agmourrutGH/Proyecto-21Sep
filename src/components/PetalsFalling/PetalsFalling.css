@@ -1,0 +1,5 @@
+.petals-falling{ position:fixed; inset:0; pointer-events:none; z-index:5; }
+.petal-fall{
+  position:absolute; width:10px; height:14px; background:var(--yellow-deep);
+  border-radius:50%/60% 60% 40% 40%; opacity:.8;
+}
