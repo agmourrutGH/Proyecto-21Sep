@@ -1,5 +1,5 @@
 .petals-falling{ position:fixed; inset:0; pointer-events:none; z-index:5; }
-.petal-fall{
-  position:absolute; width:10px; height:14px; background:var(--yellow-deep);
-  border-radius:50%/60% 60% 40% 40%; opacity:.8;
-}
+.petal-fall{ position:absolute; opacity:.8; }
+.petal-fall-a{ width:10px; height:14px; background:var(--yellow-deep); border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; }
+.petal-fall-b{ width:8px;  height:16px; background:var(--yellow-deep); border-radius:60% 40% 60% 40% / 50% 60% 40% 50%; }
+.petal-fall-c{ width:12px; height:11px; background:var(--yellow-deep); border-radius:50% 50% 20% 50% / 60% 60% 30% 60%; }

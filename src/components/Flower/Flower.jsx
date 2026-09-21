@@ -1,10 +1,17 @@
 import { forwardRef } from 'react';
 import './Flower.css';
 
+const VARIANT_IDS = {
+  default: 'flowerShape',
+  sunflower: 'flowerShapeSunflower',
+  asymmetric: 'flowerShapeAsymmetric',
+};
+
 const Flower = forwardRef(function Flower(
-  { size = 96, color = '#FFD23F', className = '', style, onClick },
+  { size = 96, color = '#FFD23F', variant = 'default', className = '', style, onClick },
   ref
 ) {
+  const shapeId = VARIANT_IDS[variant] || VARIANT_IDS.default;
   return (
     <div
       ref={ref}
@@ -19,7 +26,7 @@ const Flower = forwardRef(function Flower(
         height={size}
         style={{ color }}
       >
-        <use href="#flowerShape" xlinkHref="#flowerShape" />
+        <use href={`#${shapeId}`} xlinkHref={`#${shapeId}`} />
       </svg>
     </div>
   );

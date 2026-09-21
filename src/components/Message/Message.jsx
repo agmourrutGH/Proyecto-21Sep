@@ -40,6 +40,8 @@ const BOUQUET = [
 // hojas de relleno, asoman detrás de las flores en los bordes del ramo.
 // mismo path del pétalo de Flower (viewBox 0 0 120 120), reutilizado como hoja.
 const PETAL_D = 'M60,60 C48,45 46,18 60,4 C74,18 72,45 60,60 Z';
+const BOUQUET_VARIANTS = ['default', 'sunflower', 'asymmetric'];
+
 const LEAVES = [
   { size: 80, rot: -70, x: -175, y: 55 },
   { size: 80, rot: 70, x: 175, y: 60 },
@@ -57,7 +59,11 @@ export default function Message() {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const bouquet = useMemo(
-    () => (isMobile() ? BOUQUET.filter((f) => f.mobile !== false) : BOUQUET),
+    () =>
+      (isMobile() ? BOUQUET.filter((f) => f.mobile !== false) : BOUQUET).map((f) => ({
+        ...f,
+        variant: BOUQUET_VARIANTS[Math.floor(Math.random() * BOUQUET_VARIANTS.length)],
+      })),
     []
   );
 
@@ -160,6 +166,7 @@ export default function Message() {
             ref={(el) => (flowerRefs.current[i] = el)}
             size={f.size}
             color={f.color}
+            variant={f.variant}
             style={{
               position: 'absolute',
               left: '50%',

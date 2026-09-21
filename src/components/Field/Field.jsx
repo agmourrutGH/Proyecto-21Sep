@@ -5,6 +5,7 @@ import Flower from '../Flower/Flower.jsx';
 import './Field.css';
 
 const FIELD_COLORS = ['#FFD23F', '#FFB627', '#FFC93C'];
+const FIELD_VARIANTS = ['default', 'sunflower', 'asymmetric'];
 
 export default function Field() {
   const sectionRef = useRef(null);
@@ -19,6 +20,7 @@ export default function Field() {
       bottom: 2 + Math.random() * 8 + 'vh',
       size,
       color: FIELD_COLORS[i % FIELD_COLORS.length],
+      variant: FIELD_VARIANTS[Math.floor(Math.random() * FIELD_VARIANTS.length)],
     }));
   }, []);
 
@@ -54,6 +56,7 @@ export default function Field() {
             ref={(el) => (flowerRefs.current[i] = el)}
             size={f.size}
             color={f.color}
+            variant={f.variant}
             className="field-flower"
             style={{ left: f.left, bottom: f.bottom }}
             onClick={(e) => handleFlowerClick(e, f.color)}

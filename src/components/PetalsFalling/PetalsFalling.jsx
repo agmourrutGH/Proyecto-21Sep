@@ -3,6 +3,8 @@ import { gsap, isMobile } from '../../lib/gsapSetup';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import './PetalsFalling.css';
 
+const PETAL_SHAPES = ['petal-fall-a', 'petal-fall-b', 'petal-fall-c'];
+
 export default function PetalsFalling() {
   const boxRef = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -13,8 +15,9 @@ export default function PetalsFalling() {
     const spawnEvery = isMobile() ? 1300 : 700;
 
     function spawnPetal() {
+      const shape = PETAL_SHAPES[Math.floor(Math.random() * PETAL_SHAPES.length)];
       const p = document.createElement('div');
-      p.className = 'petal-fall';
+      p.className = `petal-fall ${shape}`;
       p.style.left = Math.random() * 100 + 'vw';
       p.style.top = '-20px';
       p.style.opacity = 0.45 + Math.random() * 0.45;
