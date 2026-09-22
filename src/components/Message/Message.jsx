@@ -5,7 +5,7 @@ import Flower from '../Flower/Flower.jsx';
 import './Message.css';
 
 // EDITÁ EL MENSAJE ACÁ ⬇️
-const FINAL_MESSAGE = 'Feliz 21 de septiembre 🌻';
+const FINAL_MESSAGE = 'Feliz 21 de septiembre 🌻\nFeliz día Cibe! 🌻';
 
 const SHADOW = {
   back: '0 2px 4px rgba(0,0,0,.15)',

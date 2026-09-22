@@ -4,7 +4,7 @@
 }
 #message h2{
   font-size:clamp(1.6rem,6vw,2.7rem); font-weight:700; min-height:2.6em;
-  padding:0 2vw;
+  padding:0 2vw; white-space:pre-line;
 }
 .cursor{ display:inline-block; width:3px; background:var(--ink); margin-left:3px; animation:blink 1s step-end infinite; }
 .cursor.no-motion{ animation:none; }
