@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/cumple/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/21-septiembre", "destination": "/index.html" }
+  ]
+}
