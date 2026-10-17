@@ -1,0 +1,14 @@
+Poné acá las cinco fotos del regalo de cumpleaños, con estos nombres exactos:
+
+  foto1.jpg   (la foto destacada, se ve más grande en el centro del álbum)
+  foto2.jpg
+  foto3.jpg
+  foto4.jpg
+  foto5.jpg
+
+- También se aceptan .jpeg, .png o .webp (por ejemplo foto3.png).
+- Nombres en minúscula, sin espacios.
+- Si falta alguna, la página muestra un marco decorativo en su lugar (no se rompe).
+- Recomendado: fotos de menos de ~1 MB cada una (por ejemplo 1600 px del lado
+  más largo) para que la página cargue rápido en el celular.
+- Los textos que acompañan cada foto se editan en src/cumple/content.js

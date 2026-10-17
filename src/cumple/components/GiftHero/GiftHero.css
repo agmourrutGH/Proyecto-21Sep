@@ -1,0 +1,125 @@
+.hero{
+  position:relative;
+  min-height:100vh;
+  min-height:100svh;
+  display:grid;
+  grid-template-rows:1fr auto 1fr;
+  justify-items:center;
+  padding:max(1.5rem, env(safe-area-inset-top)) 1rem max(1.5rem, env(safe-area-inset-bottom));
+  overflow:hidden;
+  isolation:isolate;
+  background:radial-gradient(60% 45% at 50% 50%, rgba(255,246,236,.95) 0%, rgba(255,246,236,0) 100%);
+}
+/* viñeta rojo oscuro en los bordes, se desvanece hacia abajo para no cortar con la carta */
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:radial-gradient(140% 100% at 50% 45%, rgba(248,220,217,0) 52%, rgba(158,15,42,.42) 100%);
+  -webkit-mask-image:linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-image:linear-gradient(180deg, #000 70%, transparent 100%);
+  pointer-events:none;
+}
+
+.hero__top,
+.hero__bottom{
+  display:grid;
+  width:min(100%, 40rem);
+  text-align:center;
+}
+.hero__top{ position:relative; z-index:2; align-items:end; padding-bottom:.5rem; }
+.hero__bottom{ position:relative; z-index:2; align-items:start; padding-top:1.25rem; }
+/* invitación y título comparten la misma celda: no hay saltos de layout */
+.hero__top > *,
+.hero__bottom > *{ grid-area:1 / 1; }
+
+.hero__intro{
+  font-family:var(--font-title);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(1.55rem, 5.2vw, 2.5rem);
+  line-height:1.25;
+  color:var(--wine);
+  text-wrap:balance;
+  animation:hero-in 1.2s ease both .2s;
+}
+.hero__hint{
+  font-weight:600;
+  font-size:clamp(.98rem, 3.6vw, 1.08rem);
+  letter-spacing:.02em;
+  color:var(--crimson);
+  animation:hero-in 1s ease both .8s, hint-pulse 2.6s ease-in-out infinite 2s;
+}
+@keyframes hero-in{
+  from{ opacity:0; transform:translateY(12px); }
+  to{ opacity:1; transform:none; }
+}
+@keyframes hint-pulse{
+  0%, 100%{ opacity:1; }
+  50%{ opacity:.7; }
+}
+
+.hero__title{
+  font-size:clamp(2.1rem, 8vw, 4.1rem);
+  line-height:1.12;
+  color:var(--wine);
+  text-wrap:balance;
+  text-shadow:0 2px 24px rgba(255,236,180,.9);
+}
+.hero__title:focus,
+.hero__title:focus-visible{ outline:none; }
+.hero__word{
+  display:inline-block;
+  white-space:pre;
+  animation:word-in 1s cubic-bezier(.2,.7,.2,1) both;
+  animation-delay:calc(var(--i) * .14s);
+}
+@keyframes word-in{
+  from{ opacity:0; transform:translateY(.6em) scale(.96); filter:blur(6px); }
+  to{ opacity:1; transform:none; filter:blur(0); }
+}
+
+.hero__scroll{
+  justify-self:center;
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  min-height:44px;
+  padding:.4rem 1rem;
+  border-radius:999px;
+  color:var(--crimson);
+  font-weight:600;
+  text-decoration:none;
+  animation:hero-in 1s ease both .9s;
+  transition:background-color .2s ease;
+}
+.hero__scroll:hover{ background:rgba(255,255,255,.45); }
+.hero__scroll svg{ animation:nudge 1.8s ease-in-out infinite; }
+@keyframes nudge{
+  0%, 100%{ transform:translateY(0); }
+  50%{ transform:translateY(4px); }
+}
+
+/* destellos de cuatro puntas */
+.hero__twinkles{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+}
+.twinkle{
+  position:absolute;
+  background:#fff3cf;
+  clip-path:polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  filter:drop-shadow(0 0 4px rgba(255,214,140,.9));
+  animation:twinkle 3.6s ease-in-out infinite;
+}
+@keyframes twinkle{
+  0%, 100%{ opacity:.2; transform:scale(.6) rotate(0deg); }
+  50%{ opacity:1; transform:scale(1) rotate(45deg); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .twinkle{ opacity:.7; }
+}

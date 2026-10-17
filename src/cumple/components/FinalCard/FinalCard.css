@@ -1,0 +1,64 @@
+.final{
+  display:flex;
+  justify-content:center;
+  padding:clamp(1rem, 4vw, 2rem) 1rem max(clamp(3rem, 9vw, 6rem), env(safe-area-inset-bottom));
+}
+.final__card{
+  position:relative;
+  width:min(100%, 42rem);
+  padding:clamp(2.4rem, 7vw, 3.6rem) clamp(1.4rem, 6vw, 3.4rem);
+  border-radius:26px;
+  text-align:center;
+  color:var(--cream);
+  background:
+    radial-gradient(90% 70% at 50% 0%, rgba(243,213,139,.22), rgba(243,213,139,0) 70%),
+    linear-gradient(160deg, #8e1229 0%, var(--wine) 70%, #43091a 100%);
+  box-shadow:0 30px 70px -30px rgba(90,14,31,.75);
+  overflow:hidden;
+}
+.final__card::after{
+  content:'';
+  position:absolute;
+  inset:12px;
+  border:1px solid rgba(243,213,139,.35);
+  border-radius:18px;
+  pointer-events:none;
+}
+.final__heart{
+  width:34px;
+  height:31px;
+  color:var(--gold);
+  margin:0 auto 1rem;
+  display:block;
+  animation:heartbeat 2.4s ease-in-out infinite;
+}
+@keyframes heartbeat{
+  0%, 100%{ transform:scale(1); }
+  12%{ transform:scale(1.14); }
+  24%{ transform:scale(1); }
+  36%{ transform:scale(1.1); }
+}
+.final__eyebrow{
+  font-family:var(--font-body);
+  color:var(--gold);
+}
+.final__text{
+  margin:1.2rem auto 2rem;
+  max-width:32rem;
+  font-family:var(--font-title);
+  font-style:italic;
+  font-size:clamp(1.35rem, 4.6vw, 1.85rem);
+  line-height:1.45;
+  text-wrap:balance;
+}
+.final__actions{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.8rem;
+}
+@media (max-width:420px){
+  .final__actions .btn{ width:100%; }
+}

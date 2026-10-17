@@ -1,0 +1,29 @@
+.floating-hearts{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+.floating-hearts__item{
+  position:absolute;
+  bottom:-30px;
+  color:var(--rose);
+  opacity:0;
+  animation:heart-rise linear infinite;
+}
+.floating-hearts__item:nth-child(3n){ color:var(--cherry); }
+.floating-hearts__item:nth-child(4n){ color:var(--gold); }
+.floating-hearts__item svg{ display:block; width:100%; height:100%; }
+
+@keyframes heart-rise{
+  0%{ transform:translate(0, 0) rotate(-10deg); opacity:0; }
+  10%{ opacity:.45; }
+  50%{ transform:translate(18px, -55vh) rotate(8deg); }
+  85%{ opacity:.35; }
+  100%{ transform:translate(-10px, -110vh) rotate(-6deg); opacity:0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .floating-hearts{ display:none; }
+}

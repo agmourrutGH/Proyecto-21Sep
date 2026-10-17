@@ -1,0 +1,67 @@
+.letter-section{
+  padding:clamp(3rem, 9vw, 6rem) 1rem;
+  display:flex;
+  justify-content:center;
+}
+.letter{
+  position:relative;
+  width:min(100%, 40rem);
+  padding:clamp(2.6rem, 7vw, 3.8rem) clamp(1.4rem, 6vw, 3.4rem) clamp(2rem, 6vw, 3rem);
+  border-radius:22px;
+  text-align:center;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255,255,255,.9), rgba(255,255,255,0) 70%),
+    linear-gradient(180deg, var(--paper), #fdf1ea);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 24px 60px -24px rgba(90,14,31,.35),
+    0 6px 18px -8px rgba(90,14,31,.18);
+}
+.letter::before{
+  /* borde interior delicado */
+  content:'';
+  position:absolute;
+  inset:10px;
+  border:1px solid rgba(201,148,58,.35);
+  border-radius:15px;
+  pointer-events:none;
+}
+.letter__seal{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:58px;
+  height:58px;
+  margin:-29px 0 0 -29px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#ffd9de;
+  background:radial-gradient(circle at 35% 30%, #e0243c, #9e0f2a 70%);
+  box-shadow:0 6px 14px rgba(90,14,31,.35), inset 0 -3px 6px rgba(0,0,0,.2);
+}
+.letter__seal svg{ width:24px; height:22px; }
+
+.letter .eyebrow{
+  font-family:var(--font-body);
+  margin-bottom:1.4rem;
+}
+.letter__p{
+  font-size:clamp(1.05rem, 3.6vw, 1.2rem);
+  line-height:1.8;
+  color:var(--ink);
+  text-wrap:pretty;
+}
+.letter__p + .letter__p{ margin-top:1.2rem; }
+.letter__p:first-of-type::first-letter{
+  font-family:var(--font-title);
+  font-size:1.5em;
+  color:var(--crimson);
+}
+.letter__signature{
+  margin-top:1.6rem;
+  font-family:var(--font-title);
+  font-style:italic;
+  font-size:1.25rem;
+  color:var(--crimson);
+}

@@ -1,0 +1,21 @@
+.music-toggle{
+  position:fixed;
+  right:max(1rem, env(safe-area-inset-right));
+  bottom:max(1rem, env(safe-area-inset-bottom));
+  z-index:30;
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(158,15,42,.25);
+  background:rgba(255,247,240,.85);
+  color:var(--crimson);
+  box-shadow:0 6px 18px rgba(90,14,31,.2);
+  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);
+  cursor:pointer;
+  transition:transform .2s ease, background-color .2s ease;
+}
+.music-toggle:hover{ transform:scale(1.07); background:#fff; }
+.music-toggle.is-playing{ background:var(--crimson); color:var(--cream); }
